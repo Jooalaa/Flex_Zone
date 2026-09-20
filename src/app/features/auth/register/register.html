@@ -1,0 +1,57 @@
+<div class="auth-page">
+  <form class="auth-card" [formGroup]="fg" (ngSubmit)="submit()">
+    <h2>Join FlexZone</h2>
+    <p class="subtitle">Create your account and start training</p>
+
+    @if (errorMessage()) {
+      <div class="alert-error">{{ errorMessage() }}</div>
+    }
+
+    <div class="field">
+      <label>Full Name</label>
+      <input type="text" formControlName="name" placeholder="Jane Doe">
+      @if (fg.controls.name.touched && fg.controls.name.invalid) {
+        <span class="field-error">Name must be at least 2 characters.</span>
+      }
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email" formControlName="email" placeholder="you@example.com">
+      @if (fg.controls.email.touched && fg.controls.email.invalid) {
+        <span class="field-error">Please enter a valid email.</span>
+      }
+    </div>
+
+    <div class="field">
+      <label>Password</label>
+      <input type="password" formControlName="password" placeholder="••••••••">
+      @if (fg.controls.password.touched && fg.controls.password.invalid) {
+        <span class="field-error">Password must be at least 4 characters.</span>
+      }
+    </div>
+
+    <div class="field">
+      <label>Fitness Goal</label>
+      <select formControlName="goal">
+        <option>Build Muscle</option>
+        <option>Lose Weight</option>
+        <option>Improve Endurance</option>
+        <option>General Fitness</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Experience Level</label>
+      <select formControlName="level">
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn-primary">Create Account</button>
+
+    <p class="switch-link">Already have an account? <a routerLink="/login">Login</a></p>
+  </form>
+</div>

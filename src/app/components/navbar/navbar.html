@@ -1,0 +1,80 @@
+<div class="NavBar" [class.scrolled]="isScrolled">
+    <div class="left-content">
+        <a routerLink="/" style="text-decoration:none; color: inherit;">
+            <h1><span class="letter-spacing">F</span>lex<span class="letter-spacing">Z</span>one</h1>
+        </a>
+    </div>
+    
+   
+    <div class="links desktop-only">
+        <nav>
+            <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li><a routerLink="/about">About</a></li>
+                <li><a routerLink="/contact-us">Contact</a></li>
+                @if (auth.isLoggedIn()) {
+                    <li><a routerLink="/plans">Plans</a></li>
+                    <li><a routerLink="/classes">Classes</a></li>
+                    <li><a routerLink="/supplement-store">Store</a></li>
+                    <li><a routerLink="/nutrition">Nutrition</a></li>
+                }
+                @if (auth.isAdmin()) {
+                    <li><a routerLink="/admin">Admin</a></li>
+                }
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class="logos desktop-only">
+        <i class="fa-solid fa-cart-shopping"></i>
+        @if (auth.isLoggedIn()) {
+            <a routerLink="/profile" id="l-btn">{{ auth.currentUserSignal()?.name }}</a>
+            <a href="#" id="r-btn" (click)="logout(); $event.preventDefault()">LOGOUT</a>
+        } @else {
+            <a routerLink="/login" id="l-btn">LOGIN</a>
+            <a routerLink="/register" id="r-btn">JOIN NOW</a>
+        }
+    </div>
+
+ 
+    <div class="mobile-controls mobile-only">
+        <i class="fa-solid fa-cart-shopping me-3" style="color: white; font-size: 20px;"></i>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileDrawer">
+            <i class="fa-solid fa-bars" style="color: white; font-size: 24px;"></i>
+        </button>
+    </div>
+</div>
+
+
+<div class="offcanvas offcanvas-end custom-drawer" tabindex="-1" id="mobileDrawer">
+    <div class="offcanvas-header">
+        <h2 class="m-0"><span class="letter-spacing">F</span>lex<span class="letter-spacing">Z</span>one</h2>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="drawer-links">
+            <li><a routerLink="/" data-bs-dismiss="offcanvas">Home</a></li>
+            <li><a routerLink="/about" data-bs-dismiss="offcanvas">About</a></li>
+            <li><a routerLink="/contact-us" data-bs-dismiss="offcanvas">Contact</a></li>
+            @if (auth.isLoggedIn()) {
+                <li><a routerLink="/plans" data-bs-dismiss="offcanvas">Plans</a></li>
+                <li><a routerLink="/classes" data-bs-dismiss="offcanvas">Classes</a></li>
+                <li><a routerLink="/supplement-store" data-bs-dismiss="offcanvas">Store</a></li>
+                <li><a routerLink="/nutrition" data-bs-dismiss="offcanvas">Nutrition</a></li>
+            }
+            @if (auth.isAdmin()) {
+                <li><a routerLink="/admin" data-bs-dismiss="offcanvas">Admin</a></li>
+            }
+        </ul>
+        <div class="drawer-buttons mt-5">
+            @if (auth.isLoggedIn()) {
+                <a routerLink="/profile" class="drawer-l-btn" data-bs-dismiss="offcanvas">{{ auth.currentUserSignal()?.name }}</a>
+                <a href="#" class="drawer-r-btn" (click)="logout(); $event.preventDefault()" data-bs-dismiss="offcanvas">LOGOUT</a>
+            } @else {
+                <a routerLink="/login" class="drawer-l-btn" data-bs-dismiss="offcanvas">LOGIN</a>
+                <a routerLink="/register" class="drawer-r-btn" data-bs-dismiss="offcanvas">JOIN NOW</a>
+            }
+        </div>
+    </div>
+</div>

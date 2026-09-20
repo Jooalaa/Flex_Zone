@@ -1,0 +1,189 @@
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&display=swap" rel="stylesheet">
+<div class="container-fluid">
+    <div class="row">
+        <div class="Header">
+            <div class="intro">
+                <p>ABOUT FLEXZONE</p>
+            </div>
+
+            <div class="hero">
+                <h1>We Don't Just Build Bodies.</h1>
+                <h3>We Build Champions.</h3>
+            </div>
+
+            <div class="pragraph">
+                <p>FlexZone is Egypt's leading smart fitness platform — where cutting-edge technology meets world-class
+                    training to help you become the best version of yourself.</p>
+            </div>
+        </div>
+
+        <div class="middle">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="intro">
+                            <p>OUR MISSION</p>
+                        </div>
+
+                        <div class="text">
+                            <h1>Making World-Class Fitness Accessible to Everyone</h1>
+                            <p>We founded FlexZone with a simple but powerful belief: everyone deserves access to
+                                professional fitness coaching, smart nutrition guidance, and a supportive community —
+                                regardless of their experience level or background.</p>
+                            <p>Our platform combines the expertise of certified trainers, the power of data analytics,
+                                and the motivation of community challenges to deliver a fitness experience that is truly
+                                transformative.</p>
+                            <hr>
+                        </div>
+
+                        <div id="numbers">
+                            <div class="info">
+                                <h1>1,248</h1>
+                                <p>Active Members</p>
+                            </div>
+                            <div class="info">
+                                <h1>24</h1>
+                                <p>Expert Trainers</p>
+                            </div>
+                            <div class="info">
+                                <h1>50+</h1>
+                                <p>Workout Programs</p>
+                            </div>
+                            <div class="info">
+                                <h1>10+</h1>
+                                <p>Weekly Classes</p>
+                            </div>
+                            <div class="info">
+                                <h1>4.9</h1>
+                                <p>App Rating</p>
+                            </div>
+                            <div class="info">
+                                <h1>98%</h1>
+                                <p>Member Satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- النصف الثاني: الشكل الجمالي (الصورة/الكارت) -->
+                    <div class="col-lg-6">
+                        <div class="visual-stage">
+                            <div class="main-card">
+                                <span class="bolt">⚡</span>
+                                <h2>FLEXZONE</h2>
+                                <p>Smart Fitness Platform</p>
+                            </div>
+
+                            <span class="float-pill top-left">🏋️ 50+ Workouts</span>
+                            <span class="float-pill top-right">🍎 Custom Nutrition</span>
+                            <span class="float-pill bottom-left">🤖 AI FlexBot</span>
+                            <span class="float-pill bottom-right">🏆 Challenges</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <section class="page-section" id="features">
+            <div class="section-header">
+                <span class="tag">CORE VALUES</span>
+                <h2>What We Stand For</h2>
+                <p>These principles guide everything we build, every class we offer, and every member we serve.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="feature-card" *ngFor="let feature of features">
+                    <div class="icon-box">{{ feature.icon }}</div>
+                    <h3>{{ feature.title }}</h3>
+                    <p>{{ feature.desc }}</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="timeline-section">
+            <div class="timeline">
+
+                <div class="timeline-item" *ngFor="let event of timelineEvents" [ngClass]="event.position">
+
+
+                    <div class="timeline-year">{{ event.year }}</div>
+
+
+                    <div class="timeline-content">
+                        <h3>{{ event.title }}</h3>
+                        <p>{{ event.desc }}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="cards">
+                        <div class="section-header" id="ii">
+                <span class="tag">THE TEAM</span>
+                <h2>The People Behind FlexZone</h2>
+                <p>A passionate team of fitness professionals, technologists, and community builders.</p>
+            </div>
+            <div class="team-grid">
+            @for (item of teamInfo; track $index) {
+                <div class="card-team">
+                    <span class="icon">{{item.imgId}}</span>
+                    <h3>{{item.name}}</h3>
+                    <h5>{{item.job}}</h5>
+                    <p>{{item.descripion}}</p>
+                </div>
+            }
+            </div>
+        </div>
+
+        <div class="join">
+            <div class="coon">
+                <h1>Ready to Join the FlexZone Family?</h1>
+                <p>Join 1,248+ members who've already transformed their bodies and lives. Your journey starts with one step.</p>
+                <div class="btn">
+                    <button id="l"><a href="#">Start Free Today</a></button>
+                    <button id="r">
+            <a href="#">Contact Us</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= Footer ================= -->
+<footer class="footer" id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">⚡ <span>FLEX</span>ZONE</a>
+      <p>Train Smart. Live Strong. FlexZone is your complete fitness ecosystem — workouts, nutrition, classes and community all in one place.</p>
+      <div class="socials">
+        <a href="#">📘</a><a href="#">📷</a><a href="#">🐦</a><a href="#">▶️</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <a href="#" *ngFor="let l of footerPlatform">{{ l }}</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#" *ngFor="let l of footerCompany">{{ l }}</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Get In Touch</h4>
+      <span class="contact-line" *ngFor="let c of contactInfo">{{ c.icon }} {{ c.text }}</span>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 FlexZone. All rights reserved. Built with 💜</p>
+    <p class="slogan">TRAIN SMART. LIVE STRONG.</p>
+  </div>
+</footer>
+    </div>
+</div>
+
+<!-- ================= Floating Chat Button ================= -->
+<button class="flexbot-btn">🤖 FlexBot</button>

@@ -1,0 +1,75 @@
+<footer class="site-footer">
+<div class="container">
+
+    <div class="row gy-4">
+
+        <!-- Brand -->
+        <div class="col-lg-4 col-md-12">
+            <div class="d-flex align-items-center brand-row">
+                <span class="brand-icon">⚡</span>
+                <h3 class="brand-name m-0">FLEX<span>ZONE</span></h3>
+            </div>
+
+            <p class="brand-desc mt-3">
+                Train Smart. Live Strong. FlexZone is your complete fitness platform — workouts, nutrition, classes and community all in one place.
+            </p>
+
+            <div class="d-flex gap-2 mt-3">
+                @for (social of socialLinks; track social.label) {
+                <a [href]="social.url" class="social-icon" [attr.aria-label]="social.label">
+                    {{ social.icon }}
+                </a>
+                }
+            </div>
+        </div>
+
+        <!-- Platform -->
+        <div class="col-lg-2 col-md-4 col-6">
+            <h5 class="col-title">Platform</h5>
+            <ul class="footer-links">
+                @for (link of platformLinks; track link) {
+                <li><a href="#">{{ link }}</a></li>
+                }
+            </ul>
+        </div>
+
+        <!-- Company -->
+        <div class="col-lg-2 col-md-4 col-6">
+            <h5 class="col-title">Company</h5>
+            <ul class="footer-links">
+                @for (link of companyLinks; track link) {
+                <li><a href="#">{{ link }}</a></li>
+                }
+            </ul>
+        </div>
+
+        <!-- Get In Touch -->
+        <div class="col-lg-4 col-md-4 col-12">
+            <h5 class="col-title">Get In Touch</h5>
+            <ul class="contact-list">
+                @for (item of contactInfo; track item.text) {
+                <li class="d-flex align-items-center">
+                    <span class="contact-icon">{{ item.icon }}</span>
+                    <span>{{ item.text }}</span>
+                </li>
+                }
+            </ul>
+        </div>
+
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center bottom-bar">
+        <p class="m-0">© {{ currentYear }} <strong>FlexZone</strong>. All rights reserved. Built with 💪 &amp; ❤️</p>
+        <p class="m-0 tagline">TRAIN SMART. LIVE STRONG.</p>
+    </div>
+
+</div>
+
+<a href="#" class="flexbot-btn">
+    <span class="flexbot-icon">🤖</span>
+    <span>FlexBot</span>
+</a>
+
+</footer>

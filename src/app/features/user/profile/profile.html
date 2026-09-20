@@ -1,0 +1,51 @@
+<div class="page-container">
+  <div class="page-header">
+    <h1>My Profile</h1>
+    <p>Update your account details and fitness preferences.</p>
+  </div>
+
+  <form class="auth-card" style="max-width: 480px;" [formGroup]="fg" (ngSubmit)="save()">
+    @if (saved()) {
+      <div class="alert-success">Profile updated successfully.</div>
+    }
+
+    <div class="field">
+      <label for="name">Full Name</label>
+      <input id="name" type="text" formControlName="name" />
+      @if (fg.controls.name.touched && fg.controls.name.invalid) {
+        <span class="field-error">Name must be at least 2 characters.</span>
+      }
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+      @if (fg.controls.email.touched && fg.controls.email.invalid) {
+        <span class="field-error">Please enter a valid email.</span>
+      }
+    </div>
+
+    <div class="field">
+      <label for="goal">Fitness Goal</label>
+      <select id="goal" formControlName="goal">
+        <option>Build Muscle</option>
+        <option>Lose Weight</option>
+        <option>Improve Endurance</option>
+        <option>General Fitness</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="level">Experience Level</label>
+      <select id="level" formControlName="level">
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn-primary" >
+      Save Changes
+    </button>
+  </form>
+</div>

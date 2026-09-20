@@ -1,0 +1,48 @@
+<div class="page-container">
+  <div class="page-header">
+    <h1>Book a Class</h1>
+    <p>Reserve your spot in live classes taught by our trainers.</p>
+  </div>
+
+  @if (bookingMessage()) {
+    <div class="alert-success">{{ bookingMessage() }}</div>
+  }
+
+  <div class="toolbar">
+    <select [value]="categoryFilter()" (change)="categoryFilter.set($any($event.target).value)">
+      @for (cat of categories(); track cat) {
+        <option [value]="cat">{{ cat }}</option>
+      }
+    </select>
+  </div>
+
+  @if (loading()) {
+    <p class="empty-state">Loading classes...</p>
+  } @else if (loadError()) {
+    <p class="empty-state">⚠️ Couldn't reach the mock API. Make sure it's running on http://localhost:3000 (npm run api).</p>
+  } @else if (filteredClasses().length === 0) {
+    <p class="empty-state">No classes in this category yet.</p>
+  } @else {
+    <div class="card-grid">
+      @for (gymClass of filteredClasses(); track gymClass.id) {
+        <div class="data-card">
+          <span class="badge">{{ gymClass.category }}</span>
+          <h3>{{ gymClass.title }}</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">with {{ gymClass.trainerName }}</p>
+          <p style="font-size: 0.88rem;">{{ gymClass.schedule }}</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            {{ gymClass.spotsLeft }} / {{ gymClass.capacity }} spots left
+          </p>
+          <button
+            class="btn-primary"
+            style="margin-top: 0.6rem;"
+            [disabled]="gymClass.spotsLeft <= 0"
+            (click)="book(gymClass)"
+          >
+            {{ gymClass.spotsLeft <= 0 ? 'Full' : 'Book Now' }}
+          </button>
+        </div>
+      }
+    </div>
+  }
+</div>

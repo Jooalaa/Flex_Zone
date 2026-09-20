@@ -1,0 +1,174 @@
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&display=swap" rel="stylesheet">
+<div class="container-fluid">
+    <div class="row">
+        <div class="Header">
+            <div class="intro">
+                <p>CONTACT US</p>
+            </div>
+
+            <div class="hero">
+                <h1>We'd Love to <span>Hear From You</span></h1>
+            </div>
+
+            <div class="pragraph">
+                <p>Got a question, feedback, or want to join the FlexZone family? Our team is here and ready to help.
+                </p>
+            </div>
+        </div>
+
+        <div class="get-in-touch container">
+            <div class="row">
+                <div class="col-lg-6  col-md-12 aa">
+                    <h3>Get In Touch</h3>
+                    <p>Whether you're a new member, have a technical issue, or just want to say hi — we're always happy
+                        to
+                        hear from you. Expect a reply within 24 hours.</p>
+                    <div class="contact-container">
+                        @for (item of contactList; track item.title) {
+                        <div class="contact-card">
+                            <div class="icon-box">
+                                <i [class]="item.icon"></i>
+                            </div>
+                            <div class="text-box">
+                                <h4 class="title">{{ item.title }}</h4>
+                                <p class="details style">{{ item.details }}</p>
+                            </div>
+
+                        </div>
+                        }
+                    </div>
+                   
+<div class="follow-section mt-5">
+    <h3>Follow FlexZone</h3>
+    <div class="social-buttons">
+        <a href="#" class="social-btn">
+            <i class="fa-brands fa-instagram" style="color: #8a88a3;"></i> Instagram
+        </a>
+        <a href="#" class="social-btn">
+            <i class="fa-brands fa-youtube" style="color: #4da6ff;"></i> YouTube
+        </a>
+        <a href="#" class="social-btn">
+            <i class="fa-brands fa-twitter" style="color: #ff4d4d;"></i> Twitter
+        </a>
+    </div>
+</div>
+
+
+<div class="faq-section mt-5">
+    <h3>Quick Answers</h3>
+    
+    <div class="faq-card">
+        <h4 class="faq-question"><span class="q-mark">?</span> How do I reset my password?</h4>
+        <p class="faq-answer">Click "Forgot Password" on the login page and follow the email instructions.</p>
+    </div>
+    
+    <div class="faq-card">
+        <h4 class="faq-question"><span class="q-mark">?</span> How to cancel a class booking?</h4>
+        <p class="faq-answer">Go to Classes page, find your booked class and click "Cancel Booking".</p>
+    </div>
+    
+    <div class="faq-card">
+        <h4 class="faq-question"><span class="q-mark">?</span> Can I freeze my membership?</h4>
+        <p class="faq-answer">Yes, contact us at least 48 hours before your freeze date and we will help you.</p>
+    </div>
+</div>
+
+                </div>
+                <br>
+                <div class="col-lg-6 col-md-12">
+                    <div class="message-form-container">
+                        <h3 class="form-title">Send Us a Message</h3>
+
+                        <form>
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control custom-input"
+                                        placeholder="Yousif Alaa Talat - 255312">
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control custom-input" placeholder="your@email.com">
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Phone (Optional)</label>
+                                    <input type="text" class="form-control custom-input" placeholder="+20 1XX XXX XXXX">
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Subject *</label>
+                                    <select class="form-select custom-input">
+                                        <option>General Inquiry</option>
+                                        <option>Membership</option>
+                                        <option>Technical Issue</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-4">
+                                <label class="form-label">Message *</label>
+                                <textarea class="form-control custom-input" rows="5"
+                                    placeholder="Write your message here..."></textarea>
+                            </div>
+
+
+                            <button type="submit" class="btn submit-btn w-100">
+                                <i class="fa-solid fa-envelope me-2"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="location col-md-12">
+            <i class="fa-solid fa-map-pin"></i>
+            <h2>Find Us in Cairo</h2>
+            <p>123 Fitness Street, Nasr City, Cairo, Egypt</p>
+            <button>Open in Google Maps →</button>
+        </div>
+    </div>
+</div>
+
+        <!-- ================= Footer ================= -->
+<footer class="footer" id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">⚡ <span>FLEX</span>ZONE</a>
+      <p>Train Smart. Live Strong. FlexZone is your complete fitness ecosystem — workouts, nutrition, classes and community all in one place.</p>
+      <div class="socials">
+        <a href="#">📘</a><a href="#">📷</a><a href="#">🐦</a><a href="#">▶️</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <a href="#" *ngFor="let l of footerPlatform">{{ l }}</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#" *ngFor="let l of footerCompany">{{ l }}</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Get In Touch</h4>
+      <span class="contact-line" *ngFor="let c of contactInfo">{{ c.icon }} {{ c.text }}</span>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 FlexZone. All rights reserved. Built with 💜</p>
+    <p class="slogan">TRAIN SMART. LIVE STRONG.</p>
+  </div>
+</footer>
+
+<!-- ================= Floating Chat Button ================= -->
+<button class="flexbot-btn">🤖 FlexBot</button>

@@ -1,0 +1,263 @@
+<!-- ================= Section 1: Hero ================= -->
+<header class="Header">
+  <div class="intro">
+    <p>🔥 <span>The #1 Smart Fitness Platform</span></p>
+  </div>
+
+  <div class="main-title">
+    <h1>Train <span>Smart.</span></h1>
+    <h1>Live <span>Strong.</span></h1>
+  </div>
+
+  <p class="desc">
+    FlexZone is your complete fitness ecosystem — personalized workouts, nutrition plans,
+    class booking, progress tracking and an AI coach, all in one powerful platform.
+  </p>
+
+  <div class="hero-actions">
+    <a routerLink="/register" class="primary-btn">⚡ Start Free Today</a>
+    <a routerLink="/login" class="secondary-btn">🔒 Sign In</a>
+  </div>
+
+  <div class="hero-divider"></div>
+
+  <div class="numbers">
+    <div class="stat-box" *ngFor="let stat of stats">
+      <h1>{{ stat.number }}</h1>
+      <p>{{ stat.label }}</p>
+    </div>
+  </div>
+</header>
+
+<section class="page-section" id="features">
+  <div class="section-header">
+    <span class="tag">Why FlexZone</span>
+    <h2>Everything You Need to Transform</h2>
+    <p>One platform. Unlimited potential. Everything you need to build your dream physique and healthy lifestyle.</p>
+  </div>
+
+  <div class="grid-3">
+    <div class="feature-card" *ngFor="let feature of features">
+      <div class="icon-box">{{ feature.icon }}</div>
+      <h3>{{ feature.title }}</h3>
+      <p>{{ feature.desc }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header">
+    <span class="tag">Workout Library</span>
+    <h2>Popular Workout Plans</h2>
+    <p>Science-backed workout programs designed by certified trainers for every fitness level and goal.</p>
+  </div>
+
+  <div class="grid-3">
+    <div class="plan-card" *ngFor="let plan of workoutPlans">
+
+      <div class="plan-cover">
+        <span class="cover-badge">{{ plan.category }}</span>
+        <span class="cover-rating">⭐ {{ plan.rating }}</span>
+        <span class="cover-icon">{{ plan.icon }}</span>
+      </div>
+
+      <div class="plan-body">
+        <h3>{{ plan.title }}</h3>
+        <p>{{ plan.desc }}</p>
+
+        <div class="plan-details">
+          <span>⏱ {{ plan.duration }}</span>
+          <span>🔥 {{ plan.calories }}</span>
+          <span class="badge" [ngClass]="plan.levelClass">● {{ plan.level }}</span>
+        </div>
+
+        <div class="chips">
+          <span class="chip" *ngFor="let t of plan.tags">{{ t }}</span>
+        </div>
+
+        <button class="view-plan-btn">🔒 Join to Unlock</button>
+      </div>
+    </div>
+  </div>
+
+  <a routerLink="/register" class="primary-btn center-btn">Join FlexZone – It's Free</a>
+</section>
+
+<section class="page-section">
+  <div class="ai-wrapper">
+    <div class="ai-left">
+      <span class="tag">🤖 AI Powered</span>
+      <h2>Get Your Smart Fitness Plan</h2>
+      <p>Tell us your age, weight, height, goal and experience — FlexZone's smart engine will build a completely personalized plan just for you.</p>
+
+      <ul class="check-list">
+        <li *ngFor="let item of aiFeatures">✓ {{ item }}</li>
+      </ul>
+
+      <button class="primary-btn small">⚡ Get My Free Plan</button>
+    </div>
+
+    <div class="ai-right">
+      <h4>🎯 Your Recommended Plan</h4>
+      <div class="ai-row" *ngFor="let r of aiResult">
+        <span class="ai-row-icon">{{ r.icon }}</span>
+        <span>{{ r.text }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header">
+    <span class="tag">Expert Team</span>
+    <h2>Meet Our Certified Trainers</h2>
+    <p>World-class trainers with proven track records. Real expertise, real results.</p>
+  </div>
+
+  <div class="grid-4">
+    <div class="trainer-card" *ngFor="let t of trainers">
+      <div class="avatar">{{ t.initials }}</div>
+      <h3>{{ t.name }}</h3>
+      <span class="role">{{ t.role }}</span>
+
+      <div class="rating">
+        ★★★★★ <small>{{ t.rating }} ({{ t.reviews }} reviews)</small>
+      </div>
+      <span class="experience">{{ t.experience }}</span>
+
+      <div class="chips center">
+        <span class="chip" *ngFor="let s of t.specialties">{{ s }}</span>
+      </div>
+
+      <button class="view-plan-btn primary">🔒 Join to Book</button>
+    </div>
+  </div>
+
+  <a routerLink="/about" class="secondary-btn center-btn small">Meet All Trainers →</a>
+</section>
+
+<section class="page-section">
+  <div class="section-header">
+    <span class="tag">Membership</span>
+    <h2>Simple, Transparent Pricing</h2>
+    <p>No hidden fees. Cancel anytime. Choose the plan that fits your fitness journey.</p>
+  </div>
+
+  <div class="grid-3 pricing-grid">
+    <div class="pricing-card" *ngFor="let tier of pricingTiers" [class.popular]="tier.isPopular">
+      <div class="popular-tag" *ngIf="tier.isPopular">⚡ Most Popular</div>
+
+      <div class="plan-emoji">{{ tier.icon }}</div>
+      <h3>{{ tier.name }}</h3>
+
+      <div class="price">
+        <h1>{{ tier.price }}</h1>
+        <span>{{ tier.period }}</span>
+      </div>
+
+      <ul class="pricing-features">
+        <li *ngFor="let f of tier.features" [class.disabled]="!f.included">
+          {{ f.included ? '✓' : '✕' }} {{ f.text }}
+        </li>
+      </ul>
+
+      <button class="view-plan-btn" [class.primary]="tier.isPopular">
+        🔒 Get Started – {{ tier.price }}/mo
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header">
+    <span class="tag">Success Stories</span>
+    <h2>What Our Members Say</h2>
+    <p>Real people. Real transformations. Real results.</p>
+  </div>
+
+  <div class="testimonial-card">
+    <div class="quote-mark">❞</div>
+    <p class="testimonial-text">{{ testimonials[activeTestimonial].text }}</p>
+
+    <div class="testimonial-footer">
+      <div class="testimonial-user">
+        <div class="avatar small">{{ testimonials[activeTestimonial].initial }}</div>
+        <div>
+          <h3>{{ testimonials[activeTestimonial].name }}</h3>
+          <p>{{ testimonials[activeTestimonial].meta }}</p>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+
+  <div class="dots">
+    <span *ngFor="let t of testimonials; let i = index"
+          [class.active]="i === activeTestimonial"
+          (click)="activeTestimonial = i"></span>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header">
+    <span class="tag">FAQ</span>
+    <h2>Frequently Asked Questions</h2>
+  </div>
+
+  <div class="faq-list">
+    <div class="faq-item" *ngFor="let item of faqs; let i = index" [class.open]="openFaq === i">
+      <button class="faq-question" (click)="toggleFaq(i)">
+        <span>{{ item.q }}</span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="faq-answer" *ngIf="openFaq === i">
+        <p>{{ item.a }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="cta-box">
+    <h2>READY TO TRANSFORM?</h2>
+    <p>Join 1,248+ members who are already crushing their fitness goals with FlexZone. Your journey starts today.</p>
+    <div class="hero-actions center">
+      <a routerLink="/register" class="primary-btn">⚡ Start Free – No Credit Card</a>
+      <a routerLink="/assistant" class="secondary-btn">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">⚡ <span>FLEX</span>ZONE</a>
+      <p>Train Smart. Live Strong. FlexZone is your complete fitness ecosystem — workouts, nutrition, classes and community all in one place.</p>
+      <div class="socials">
+        <a href="#">📘</a><a href="#">📷</a><a href="#">🐦</a><a href="#">▶️</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <a href="#" *ngFor="let l of footerPlatform">{{ l }}</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#" *ngFor="let l of footerCompany">{{ l }}</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Get In Touch</h4>
+      <span class="contact-line" *ngFor="let c of contactInfo">{{ c.icon }} {{ c.text }}</span>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 FlexZone. All rights reserved. Built with 💜</p>
+    <p class="slogan">TRAIN SMART. LIVE STRONG.</p>
+  </div>
+</footer>
+
+<button class="flexbot-btn">🤖 FlexBot</button>

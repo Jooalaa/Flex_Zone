@@ -1,0 +1,5 @@
+.page-container{
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(circle at 50% 0%, rgba(138, 43, 226, 0.18), transparent 60%);
+  width: 100%;
+}

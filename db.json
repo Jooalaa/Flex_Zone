@@ -1,0 +1,287 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@flexzone.com",
+      "password": "admin123",
+      "role": "admin",
+      "goal": "Manage FlexZone",
+      "level": "Advanced",
+      "joinDate": "2024-01-10"
+    },
+    {
+      "id": 2,
+      "name": "Mahmoud Ahmed",
+      "email": "user@flexzone.com",
+      "password": "user123",
+      "role": "user",
+      "goal": "Build Muscle",
+      "level": "Intermediate",
+      "joinDate": "2025-02-15"
+    }
+  ],
+  "trainers": [
+    {
+      "id": 1,
+      "initials": "AM",
+      "name": "Ahmed Mohamed",
+      "role": "Certified Personal Trainer",
+      "rating": 4.9,
+      "reviews": 128,
+      "experience": "7 Years Experience",
+      "specialties": [
+        "Muscle Building",
+        "Strength Training",
+        "Weight Loss"
+      ]
+    },
+    {
+      "id": 2,
+      "initials": "SM",
+      "name": "Sara Mahmoud",
+      "role": "Yoga & Pilates Instructor",
+      "rating": 4.8,
+      "reviews": 96,
+      "experience": "5 Years Experience",
+      "specialties": [
+        "Yoga",
+        "Pilates",
+        "Flexibility"
+      ]
+    },
+    {
+      "id": 3,
+      "initials": "OK",
+      "name": "Omar Khalil",
+      "role": "HIIT & Boxing Coach",
+      "rating": 4.7,
+      "reviews": 82,
+      "experience": "6 Years Experience",
+      "specialties": [
+        "HIIT",
+        "Boxing",
+        "Cardio"
+      ]
+    },
+    {
+      "id": 4,
+      "initials": "NS",
+      "name": "Nour Salah",
+      "role": "Dance Fitness Instructor",
+      "rating": 4.9,
+      "reviews": 110,
+      "experience": "4 Years Experience",
+      "specialties": [
+        "Zumba",
+        "Dance Fitness",
+        "Cardio"
+      ]
+    }
+  ],
+  "plans": [
+    {
+      "id": 1,
+      "category": "Chest",
+      "icon": "💪",
+      "rating": 4.8,
+      "title": "Chest & Triceps Power",
+      "desc": "Complete chest and triceps workout for building upper body mass and strength.",
+      "duration": "45 min",
+      "calories": 420,
+      "level": "Intermediate",
+      "tags": [
+        "Chest",
+        "Triceps",
+        "Shoulders"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "Legs",
+      "icon": "🦵",
+      "rating": 4.9,
+      "title": "Leg Day Destroyer",
+      "desc": "Brutal leg day workout that will push your lower body to the limit.",
+      "duration": "60 min",
+      "calories": 680,
+      "level": "Advanced",
+      "tags": [
+        "Quads",
+        "Hamstrings",
+        "Glutes"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Back",
+      "icon": "🔙",
+      "rating": 4.7,
+      "title": "Back & Biceps Builder",
+      "desc": "Build a wide, thick back panel with powerful biceps.",
+      "duration": "50 min",
+      "calories": 480,
+      "level": "Intermediate",
+      "tags": [
+        "Lats",
+        "Traps",
+        "Biceps"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "Shoulders",
+      "icon": "🎯",
+      "rating": 4.6,
+      "title": "Shoulder Sculpt",
+      "desc": "Complete shoulder workout for building 3D round shoulders.",
+      "duration": "40 min",
+      "calories": 320,
+      "level": "Beginner",
+      "tags": [
+        "Front Delts",
+        "Side Delts",
+        "Rear Delts"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "Full Body",
+      "icon": "⚡",
+      "rating": 5,
+      "title": "Full Body Power",
+      "desc": "The ultimate full body compound workout. Maximum results in minimum time.",
+      "duration": "70 min",
+      "calories": 800,
+      "level": "Advanced",
+      "tags": [
+        "Full Body"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "Core",
+      "icon": "🔥",
+      "rating": 4.5,
+      "title": "Core & Abs Shred",
+      "desc": "Get shredded abs with this focused core workout.",
+      "duration": "30 min",
+      "calories": 250,
+      "level": "Beginner",
+      "tags": [
+        "Core",
+        "Abs",
+        "Obliques"
+      ]
+    }
+  ],
+  "classes": [
+    {
+      "spotsLeft": 5,
+      "id": 1
+    },
+    {
+      "spotsLeft": 1,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "title": "Boxing Fundamentals",
+      "trainerId": 3,
+      "category": "Boxing",
+      "schedule": "Mon/Wed - 8:00 PM",
+      "capacity": 12,
+      "spotsLeft": 0
+    },
+    {
+      "id": 4,
+      "title": "Zumba Party",
+      "trainerId": 4,
+      "category": "Dance",
+      "schedule": "Sat - 10:00 AM",
+      "capacity": 25,
+      "spotsLeft": 12
+    },
+    {
+      "id": 5,
+      "title": "Strength & Conditioning",
+      "trainerId": 1,
+      "category": "Strength",
+      "schedule": "Daily - 5:30 PM",
+      "capacity": 18,
+      "spotsLeft": 5
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "userId": 2,
+      "classId": 1,
+      "date": "2026-09-20",
+      "status": "confirmed"
+    },
+    {
+      "userId": 2,
+      "classId": 2,
+      "date": "2026-09-20",
+      "status": "confirmed",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "classId": 1,
+      "date": "2026-09-20",
+      "status": "confirmed",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "classId": 2,
+      "date": "2026-09-20",
+      "status": "confirmed",
+      "id": 4
+    }
+  ],
+  "knowledgeBase": [
+    {
+      "id": 1,
+      "topic": "Protein Intake",
+      "content": "For muscle building, aim for 1.6 to 2.2 grams of protein per kilogram of body weight per day, spread across 3-4 meals. Good sources include chicken, fish, eggs, dairy, and whey protein."
+    },
+    {
+      "id": 2,
+      "topic": "Beginner Training Frequency",
+      "content": "Beginners should train 3-4 days per week with at least one rest day between sessions targeting the same muscle group. This allows adequate recovery while building consistency."
+    },
+    {
+      "id": 3,
+      "topic": "Class Booking Policy",
+      "content": "Members can book up to 2 weeks in advance. Pro and Elite members get priority booking. Cancellations must be made at least 2 hours before class start time to free the spot for others."
+    },
+    {
+      "id": 4,
+      "topic": "Weight Loss Nutrition",
+      "content": "A sustainable weight loss approach involves a moderate calorie deficit of 300-500 calories per day, combined with regular strength training to preserve muscle mass and cardio for extra calorie burn."
+    },
+    {
+      "id": 5,
+      "topic": "Recovery & Rest",
+      "content": "Muscles grow during rest, not during the workout itself. Aim for 7-9 hours of sleep, and consider foam rolling or light stretching on rest days to aid recovery."
+    },
+    {
+      "id": 6,
+      "topic": "Choosing a Workout Plan",
+      "content": "Beginners should start with full-body or beginner-level plans 3 times a week. Intermediate members can move to split routines like push/pull/legs. Advanced members can handle higher volume and frequency."
+    },
+    {
+      "id": 7,
+      "topic": "Hydration Guidelines",
+      "content": "Drink at least 2-3 liters of water daily, and increase intake on training days. Proper hydration supports performance, recovery, and reduces the risk of cramps."
+    },
+    {
+      "id": 8,
+      "topic": "Membership Plans",
+      "content": "FlexZone offers Starter, Pro, and Elite membership tiers. Pro and Elite include unlimited gym access, custom nutrition plans, and class booking, while Elite adds a dedicated personal trainer."
+    }
+  ]
+}

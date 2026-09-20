@@ -1,0 +1,19 @@
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <h2>⚡ Admin</h2>
+    <nav>
+      @for (item of navItems; track item.path) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.exact }"
+        >
+          <span>{{ item.icon }}</span> {{ item.label }}
+        </a>
+      }
+    </nav>
+  </aside>
+  <main class="admin-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

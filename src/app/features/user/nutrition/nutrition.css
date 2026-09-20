@@ -1,0 +1,200 @@
+#main{
+    background-color: #0a0a0f;
+}
+
+.title h1{
+    color: white;
+}
+
+.title span{
+    color: #a78bfa;
+}
+
+.title p{
+    color: var(--text-muted);
+}
+
+.selector {
+    background-color: #16162a;
+    border-radius: 15px;
+    border: 1px solid var(--border-color, #2d2b4a);
+}
+
+.selector h1 {
+    color: white;
+}
+
+.conta {
+    background-color: #1d1d31;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease; 
+}
+
+.conta:hover {
+    border: 1px solid var(--border-color);
+    transform: translateY(-5px);
+}
+
+
+.active-card {
+    border: 2px solid #8358ff !important;
+    background-color: #1e1c35; 
+    transform: scale(1.02); 
+    box-shadow: 0 0 15px rgba(131, 88, 255, 0.2); 
+}
+
+.macros-container{
+    background-color: #16162a;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+
+/* البادج البنفسجي اللي جنب العنوان */
+.goal-badge {
+    background-color: transparent;
+    color: #b7a8ff;
+    border: 1px solid #8358ff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* كارت الوجبة نفسه */
+.meal-card {
+    background-color: #16162a; /* لون الخلفية الكحلي */
+    border: 1px solid var(--border-color, #2d2b4a);
+    border-radius: 12px;
+    overflow: hidden; /* عشان الحواف تفضل دائرية */
+}
+
+/* الجزء العلوي في كارت الوجبة (الفطار، الغدا..) */
+.meal-header {
+    background-color: #1d1d31; /* خلفية أغمق شوية للهيدر */
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color, #2d2b4a);
+}
+
+/* صنف الأكل الواحد */
+.food-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #1e1c35; /* خط خفيف بين كل أكلة والتانية */
+    transition: background-color 0.2s ease;
+}
+
+/* عشان نشيل الخط من آخر صنف أكل في الكارت */
+.food-item:last-child {
+    border-bottom: none;
+}
+
+.food-item:hover {
+    background-color: #1a1a2e; /* تأثير خفيف لما تقف بالماوس على الأكلة */
+}
+
+.title-row h2 {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+}
+
+.filter-btn {
+    background-color: #1d1d31;
+    color: #8a88a3;
+    border: 1px solid var(--border-color, #2d2b4a);
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: #8358ff;
+    color: #d1d0df;
+}
+
+.filter-btn.active {
+    background-color: #8358ff;
+    color: white;
+    border-color: #8358ff;
+}
+
+.food-card {
+    background-color: #16162a;
+    border: 1px solid var(--border-color, #2d2b4a);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    border-color: #8358ff;
+}
+
+.category-badge {
+    background-color: #1d1d31;
+    color: #b7a8ff;
+    border: 1px solid var(--border-color, #2d2b4a);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 12px;
+}
+
+.food-name {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.food-serving {
+    color: #6a6885;
+    font-size: 12px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.stat-box {
+    border-radius: 8px;
+    padding: 6px 4px;
+    text-align: center;
+}
+
+.stat-value {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: #8a88a3;
+}
+
+.stat-kcal {
+    background-color: rgba(131, 88, 255, 0.15);
+}
+.stat-kcal .stat-value { color: #b7a8ff; }
+
+.stat-protein {
+    background-color: rgba(59, 130, 246, 0.15);
+}
+.stat-protein .stat-value { color: #60a5fa; }
+
+.stat-carbs {
+    background-color: rgba(243, 156, 18, 0.15);
+}
+.stat-carbs .stat-value { color: #f39c12; }
+
+.stat-fats {
+    background-color: rgba(16, 185, 129, 0.15);
+}
+.stat-fats .stat-value { color: #34d399; }

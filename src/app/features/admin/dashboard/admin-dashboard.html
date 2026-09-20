@@ -1,0 +1,18 @@
+<div class="page-header">
+  <h1>Admin Dashboard</h1>
+  <p>Overview of FlexZone's members, trainers, and activity.</p>
+</div>
+
+@if (loading()) {
+  <p class="empty-state">Loading stats...</p>
+} @else {
+  <div class="card-grid">
+    @for (stat of stats(); track stat.label) {
+      <div class="data-card" style="text-align:center;">
+        <div style="font-size: 1.8rem;">{{ stat.icon }}</div>
+        <div style="font-size: 2rem; font-weight: 800; margin: 0.3rem 0;">{{ stat.value }}</div>
+        <div style="color: var(--text-muted); font-size: 0.85rem;">{{ stat.label }}</div>
+      </div>
+    }
+  </div>
+}

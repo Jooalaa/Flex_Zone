@@ -1,0 +1,193 @@
+<section id="main">
+<div class="container">
+    <div class="row">
+        <div class="title">
+            <h1>🍎 Nutrition <span>Planner</span></h1>
+            <p>Personalized nutrition plans built around your fitness goal. Eat right, train hard, see results.</p>
+        </div>
+
+
+<div class="selector container p-4 mt-3">
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h1>What's Your Goal?</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        @for (item of goalsList; track $index) {
+        <div class="col-md-4 mb-3">
+            <div class="conta p-4 h-100" 
+                 (click)="selectGoal(item)" 
+                 [class.active-card]="selectedGoal.title === item.title"
+                 style="cursor: pointer;">
+                 
+                <div class="icon-box" style="font-size: 30px;">
+                    {{ item.icon }}
+                </div>
+                <h4 class="title mt-3 text-center" style="color: #b7a8ff; font-weight: bold;">
+                    {{ item.title }}
+                </h4>
+                <p class="description text-center m-0" style="color: #8a88a3;">
+                    {{ item.description }}
+                </p>
+                
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+<div class="macros-container container mt-4">
+    <div class="row align-items-center">
+        
+        <div class="col-md-3 text-center">
+            <h2 style="color: white; font-weight: bold;">{{ selectedGoal.calories }}</h2>
+            <p style="color: #8a88a3;">kcal/day</p>
+        </div>
+        
+        <div class="col-md-9">
+            <div class="mb-3">
+                <span style="color: white;">Protein: {{ selectedGoal.protein.amount }}</span>
+                <span style="float: right; color: #8a88a3;">{{ selectedGoal.protein.percentage }}</span>
+                <div class="progress" style="height: 8px; background-color: #2d2b4a;">
+                    <div class="progress-bar" [style.width]="selectedGoal.protein.percentage" style="background-color: #8358ff;"></div>
+                </div>
+            </div>
+            
+            <!-- كارب -->
+            <div class="mb-3">
+                <span style="color: white;">Carbohydrates: {{ selectedGoal.carbs.amount }}</span>
+                <span style="float: right; color: #8a88a3;">{{ selectedGoal.carbs.percentage }}</span>
+                <div class="progress" style="height: 8px; background-color: #2d2b4a;">
+                    <div class="progress-bar" [style.width]="selectedGoal.carbs.percentage" style="background-color: #f39c12;"></div>
+                </div>
+            </div>
+
+
+                    <div class="mb-3">
+                <span style="color: white;">Healthy Fats: {{ selectedGoal.fats.amount }}</span>
+                <span style="float: right; color: #8a88a3;">{{ selectedGoal.fats.percentage }}</span>
+                <div class="progress" style="height: 8px; background-color: #2d2b4a;">
+                    <div class="progress-bar" [style.width]="selectedGoal.carbs.percentage" style="background-color: #0b6610;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="meal-plan-section container mt-5">
+    <!-- عنوان السيكشن والبادج اللي بيتغير مع الهدف -->
+    <div class="d-flex align-items-center mb-4">
+        <h3 style="color: white; margin: 0; font-weight: bold;">
+            <i class="fa-regular fa-clipboard me-2"></i> Daily Meal Plan
+        </h3>
+        <!-- البادج البنفسجي بياخد اسمه من المتغير -->
+        <span class="goal-badge ms-3">{{ selectedGoal.title }}</span>
+    </div>
+
+    <div class="row">
+        <!-- بنلف على الوجبات (فطار، غدا، الخ) -->
+        @for (meal of selectedGoal.mealPlan; track meal.name) {
+        <div class="col-lg-6 mb-4">
+            <div class="meal-card">
+                
+                <!-- هيدر الوجبة -->
+                <div class="meal-header d-flex justify-content-between align-items-center">
+                    <h5 style="color: white; font-weight: bold; margin: 0;">
+                        {{ meal.name }} <span>{{ meal.icon }}</span>
+                    </h5>
+                    <span style="color: #8a88a3; font-size: 14px;">{{ meal.totalCalories }} kcal</span>
+                </div>
+
+                <!-- بنلف على أصناف الأكل جوه كل وجبة -->
+                <div class="meal-items">
+                    @for (item of meal.items; track item.name) {
+                    <div class="food-item d-flex align-items-center justify-content-between">
+                        
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="food-icon" style="font-size: 24px;">{{ item.icon }}</div>
+                            <div>
+                                <h6 style="color: #d1d0df; margin: 0; font-size: 15px;">{{ item.name }}</h6>
+                                <span style="color: #6a6885; font-size: 12px;">{{ item.serving }}</span>
+                            </div>
+                        </div>
+
+                        <div class="text-end">
+                            <h6 style="color: #6a6885; margin: 0; font-size: 14px;">{{ item.calories }} kcal</h6>
+                            <span style="color: #8a88a3; font-size: 12px;">P: {{ item.protein }}</span>
+                        </div>
+                        
+                    </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+<section id="main">
+<div class="container py-4">
+
+    <div class="title-row d-flex align-items-center mb-4">
+        <div class="icon-box" style="font-size: 24px;">🍲</div>
+        <h2 class="ms-2">Food Library</h2>
+    </div>
+
+    <div class="filters d-flex flex-wrap gap-2 mb-4">
+        @for (cat of categories; track cat) {
+        <button
+            class="filter-btn"
+            [class.active]="selectedCategory === cat"
+            (click)="selectCategory(cat)">
+            {{ cat }}
+        </button>
+        }
+    </div>
+
+    <div class="row">
+        @for (item of filteredItems; track item.name) {
+        <div class="col-md-3 col-sm-6 mb-4">
+            <div class="food-card p-3 h-100">
+
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="food-icon" style="font-size: 30px;">{{ item.icon }}</div>
+                    <span class="category-badge">{{ item.category }}</span>
+                </div>
+
+                <h6 class="food-name mb-1">{{ item.name }}</h6>
+                <p class="food-serving mb-3">{{ item.serving }}</p>
+
+                <div class="stats-grid">
+                    <div class="stat-box stat-kcal">
+                        <div class="stat-value">{{ item.calories }}</div>
+                        <div class="stat-label">kcal</div>
+                    </div>
+                    <div class="stat-box stat-protein">
+                        <div class="stat-value">{{ item.protein }}</div>
+                        <div class="stat-label">Protein</div>
+                    </div>
+                    <div class="stat-box stat-carbs">
+                        <div class="stat-value">{{ item.carbs }}</div>
+                        <div class="stat-label">Carbs</div>
+                    </div>
+                    <div class="stat-box stat-fats">
+                        <div class="stat-value">{{ item.fats }}</div>
+                        <div class="stat-label">Fats</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        }
+    </div>
+
+</div>
+</section>
+    </div>
+</div>
+</section>
+
+<app-footer></app-footer>

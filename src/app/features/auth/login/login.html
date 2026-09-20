@@ -1,0 +1,34 @@
+<div class="auth-page">
+  <form class="auth-card" [formGroup]="fg" (ngSubmit)="submit()">
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Log in to your FlexZone account</p>
+
+    @if (errorMessage()) {
+      <div class="alert-error">{{ errorMessage() }}</div>
+    }
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email" formControlName="email" placeholder="you@example.com">
+      @if (fg.controls.email.touched && fg.controls.email.invalid) {
+        <span class="field-error">Please enter a valid email.</span>
+      }
+    </div>
+
+    <div class="field">
+      <label>Password</label>
+      <input type="password" formControlName="password" placeholder="••••••••">
+      @if (fg.controls.password.touched && fg.controls.password.invalid) {
+        <span class="field-error">Password is required.</span>
+      }
+    </div>
+
+    <button type="submit" class="btn-primary">Login</button>
+
+    <p class="demo-hint">
+      Demo accounts — Admin: admin&#64;flexzone.com / admin123 · User: user&#64;flexzone.com / user123
+    </p>
+
+    <p class="switch-link">Don't have an account? <a routerLink="/register">Register</a></p>
+  </form>
+</div>

@@ -1,0 +1,56 @@
+.admin-shell {
+  display: flex;
+  min-height: 100vh;
+  padding-top: 4.5rem;
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(circle at 50% 0%, rgba(138, 43, 226, 0.18), transparent 60%);
+  color: white;
+}
+
+.admin-sidebar {
+  width: 220px;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border-color);
+  padding: 1.5rem 1rem;
+  position: sticky;
+  top: 4.5rem;
+  height: calc(100vh - 4.5rem);
+}
+
+.admin-sidebar h2 {
+  font-size: 1.1rem;
+  margin: 0 0 1.5rem 0.5rem;
+}
+
+.admin-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.admin-sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  color: #d5d5dd;
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.admin-sidebar a:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.admin-sidebar a.active {
+  background: rgba(138, 43, 226, 0.15);
+  color: var(--primary-light);
+  font-weight: 600;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 2rem 2.5rem;
+  min-width: 0;
+}

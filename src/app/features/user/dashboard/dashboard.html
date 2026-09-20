@@ -1,0 +1,18 @@
+<div class="body">
+  <div class="dashboard">
+    <header class="dash-header">
+      <h1>Welcome back, {{ user()?.name }} 👋</h1>
+      <p>Goal: <strong>{{ user()?.goal }}</strong> · Level: <strong>{{ user()?.level }}</strong></p>
+    </header>
+
+    <div class="quick-grid">
+      @for (link of quickLinks; track link.path) {
+        <a class="quick-card" [routerLink]="link.path">
+          <span class="icon">{{ link.icon }}</span>
+          <h3>{{ link.title }}</h3>
+          <p>{{ link.desc }}</p>
+        </a>
+      }
+    </div>
+  </div>
+</div>
