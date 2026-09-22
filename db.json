@@ -19,6 +19,16 @@
       "goal": "Build Muscle",
       "level": "Intermediate",
       "joinDate": "2025-02-15"
+    },
+    {
+      "name": "Mahmoud",
+      "email": "mahmoud@gmail.com",
+      "password": "Mahmoud!1",
+      "goal": "Build Muscle",
+      "level": "Beginner",
+      "role": "user",
+      "joinDate": "2026-09-22",
+      "id": 3
     }
   ],
   "trainers": [
