@@ -468,7 +468,7 @@ Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more informa
 
 <br/>
 
-**Built with 💜 by [Your Name](https://github.com/mahmoudbahnsey)**
+**Built with 💜 by [MahmoudBahnsey ](https://github.com/mahmoudbahnsey)**
 
 <br/>
 
